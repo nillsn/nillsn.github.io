@@ -14,7 +14,7 @@ export const BOOKMARK_COLLECTIONS = [
     {
         name : "Others",
         bookmarks : [
-            { name: "BBK Radio1", url: "https://www.bbc.co.uk/sounds/play/live:bbc_radio_one" }
+            { name: "BBC Radio1", url: "https://www.bbc.co.uk/sounds/play/live:bbc_radio_one" }
         ]
     },
 ];
