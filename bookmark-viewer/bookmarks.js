@@ -6,6 +6,7 @@ export const BOOKMARK_COLLECTIONS = [
             { name: "Nillsn's App", url: "https://nillsn.github.io/next/" },
             { name: "DSVN Competition", url: "https://dsvn.de/competition/" },
             { name: "2K Software", url: "https://2k-dart-software.com/frontend/events" },
+            { name: "Finnigan's Harp Rookie League", url: "https://2k-dart-software.com/frontend/events/1/event/10187/phase/17742/group/119742" },
             { name: "nuLiga - Bezirksklasse E", url: "https://bdv-dart.liga.nu/cgi-bin/WebObjects/nuLigaDARTDE.woa/wa/groupPage?championship=MOFDV+2023%2F24&group=210162" },
             { name: "nuLiga - Damen", url: "https://bdv-dart.liga.nu/cgi-bin/WebObjects/nuLigaDARTDE.woa/wa/groupPage?championship=MOFDV+2023%2F24&group=210165" },
             { name: "nuLiga - Mannschaften", url: "https://bdv-dart.liga.nu/cgi-bin/WebObjects/nuLigaDARTDE.woa/wa/clubTeams?club=108" }
