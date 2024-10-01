@@ -1,6 +1,6 @@
 export const BOOKMARK_COLLECTIONS = [
     {
-        name : "Darts Allgemein",
+        name : "Darts",
         bookmarks : [
             { name: "/r/Darts", url: "https://www.reddit.com/r/Darts/new/" },
             { name: "Nillsn's App", url: "https://nillsn.github.io/next/" },
@@ -23,7 +23,8 @@ export const BOOKMARK_COLLECTIONS = [
             { name: "DSV Nürnberg 93", url: "https://2k-dart-software.com/frontend/events/2/mandant/1422" },
             { name: "Heinrich VIII.", url: "https://2k-dart-software.com/frontend/events/4/mandant/452" },
             { name: "DSV Finnigan's Harp", url: "https://2k-dart-software.com/frontend/events/1/mandant/393" },
-            { name: "Rookie League / Challenger League", url: "https://2k-dart-software.com/frontend/events/1/event/10187/phase/17742/group/119742" }
+            { name: "Challenger League", url: "https://2k-dart-software.com/frontend/events/1/event/16012/phase/28140/group/187360" },
+            { name: "Rookie League", url: "https://2k-dart-software.com/frontend/events/1/event/16018/phase/28148" }
         ]
     },
     {
