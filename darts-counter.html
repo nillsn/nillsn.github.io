@@ -10,6 +10,7 @@
         .button {
             margin: 5px;
             padding: 10px 20px;
+            width: 100%;
         }
     </style>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
@@ -18,13 +19,16 @@
 <body>
     <main class="container">
         <h1>Darts Counter</h1>
-
         <div id="level"></div>
 
-        <button id="button1" class="button" onclick="updateCounter(0)">0 Hits</button>
-        <button id="button2" class="button" onclick="updateCounter(1)">1 Hit</button>
-        <button id="button3" class="button" onclick="updateCounter(2)">2 Hits</button>
-        <button id="button4" class="button" onclick="updateCounter(3)">3 Hits</button>
+        <div class="grid">
+            <div><button id="button1" class="button" onclick="updateCounter(0)">0 Hits</button></div>
+            <div><button id="button2" class="button" onclick="updateCounter(1)">1 Hit</button></div>
+            <div><button id="button3" class="button" onclick="updateCounter(2)">2 Hits</button></div>
+            <div><button id="button4" class="button" onclick="updateCounter(3)">3 Hits</button></div>
+        </div>
+
+        <div><button id="undoButton" class="button" onclick="undo()">Undo</button></div>
 
         <div id="totalScore"></div>
 
@@ -43,20 +47,23 @@
             function updateCounter(hits) {
                 scores.push(hits);
 
+                updateLevel();
                 updateTotalScore();
+            }
 
+            function updateLevel() {
                 if (scores.length == levels.length) {
                     document.getElementById('button1').disabled = true;
                     document.getElementById('button2').disabled = true;
                     document.getElementById('button3').disabled = true;
                     document.getElementById('button4').disabled = true;
                 } else {
-                    updateTarget();
+                    document.getElementById('button1').disabled = false;
+                    document.getElementById('button2').disabled = false;
+                    document.getElementById('button3').disabled = false;
+                    document.getElementById('button4').disabled = false;
+                    document.getElementById('level').innerHTML = `<h2>Target: ${levels[scores.length]}</h2>`;
                 }
-            }
-
-            function updateTarget() {
-                document.getElementById('level').innerHTML = `<h2>Target: ${levels[scores.length]}</h2>`;
             }
 
             function updateTotalScore() {
@@ -68,8 +75,14 @@
 
                 document.getElementById('totalScore').innerHTML = `<h2>Total Score: ${totalScore}</h2>`;
             }
+
+            function undo() {
+                scores.pop();
+                updateLevel();
+                updateTotalScore();
+            }
         
-            updateTarget();
+            updateLevel();
             updateTotalScore();
     
         </script>
