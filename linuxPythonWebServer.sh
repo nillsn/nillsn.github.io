@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-python -m http.server 7777
+python3 -m http.server 7777
