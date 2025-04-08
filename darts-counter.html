@@ -26,33 +26,52 @@
         <button id="button3" class="button" onclick="updateCounter(2)">2 Hits</button>
         <button id="button4" class="button" onclick="updateCounter(3)">3 Hits</button>
 
-        <div id="result"></div>
+        <div id="totalScore"></div>
 
         <script>
-            let level = 1;
-            let score = 0;
-
+            const scores = [];
             const levels = [
-                "S1, S2, S3", "S4, S5, S6", "S7, S8, S9", "S10, S11, S12",
-                "S13, S14, S15", "S16, S17, S18", "S19, S20, Bull (25)"
+                "S1, S2, S3",
+                "S4, S5, S6",
+                "S7, S8, S9",
+                "S10, S11, S12",
+                "S13, S14, S15",
+                "S16, S17, S18",
+                "S19, S20, Bull (25)"
             ];
 
             function updateCounter(hits) {
-                score += hits;
-                document.getElementById('result').innerHTML = `<h2>Total Score: ${score}</h2>`;
+                scores.push(hits);
 
-                if (level < 7) {
-                    level++;
-                    document.getElementById('level').innerHTML = `<h2>Target: ${levels[level - 1]}</h2>`;
-                } else if (level === 7) {
+                updateTotalScore();
+
+                if (scores.length == levels.length) {
                     document.getElementById('button1').disabled = true;
                     document.getElementById('button2').disabled = true;
                     document.getElementById('button3').disabled = true;
                     document.getElementById('button4').disabled = true;
+                } else {
+                    updateTarget();
                 }
             }
 
-            document.getElementById('level').innerHTML = `<h2>Target: ${levels[0]}</h2>`;
+            function updateTarget() {
+                document.getElementById('level').innerHTML = `<h2>Target: ${levels[scores.length]}</h2>`;
+            }
+
+            function updateTotalScore() {
+                let totalScore = 0;
+
+                for (let i of scores) {
+                    totalScore += i;
+                }
+
+                document.getElementById('totalScore').innerHTML = `<h2>Total Score: ${totalScore}</h2>`;
+            }
+        
+            updateTarget();
+            updateTotalScore();
+    
         </script>
     </main>
 </body>
