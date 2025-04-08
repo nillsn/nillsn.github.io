@@ -6,13 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark">
     <title>Darts Counter</title>
-    <style>
-        .button {
-            margin: 5px;
-            padding: 10px 20px;
-            width: 100%;
-        }
-    </style>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
 </head>
 
@@ -21,16 +14,15 @@
         <h1>Darts Counter</h1>
         <div id="level"></div>
 
-        <div class="grid">
-            <div><button id="button1" class="button" onclick="updateCounter(0)">0 Hits</button></div>
-            <div><button id="button2" class="button" onclick="updateCounter(1)">1 Hit</button></div>
-            <div><button id="button3" class="button" onclick="updateCounter(2)">2 Hits</button></div>
-            <div><button id="button4" class="button" onclick="updateCounter(3)">3 Hits</button></div>
-        </div>
+        <form>
+            <input type="button" id="button1" value="0 Hits" onclick="updateCounter(0)">
+            <input type="button" id="button2" value="1 Hit" onclick="updateCounter(1)">
+            <input type="button" id="button3" value="2 Hits" onclick="updateCounter(2)">
+            <input type="button" id="button4" value="3 Hits" onclick="updateCounter(3)">
 
-        <div><button id="undoButton" class="button" onclick="undo()">Undo</button></div>
-
-        <div id="totalScore"></div>
+            <div id="totalScore"></div>
+            <input type="button" value="Undo" onclick="undo()">
+        </form>
 
         <script>
             const scores = [];
