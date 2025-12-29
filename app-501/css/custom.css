@@ -1,0 +1,9 @@
+td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.tdright {
+  text-align: right;
+  vertical-align: middle;
+}
