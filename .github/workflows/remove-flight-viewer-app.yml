@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  clean-files:
+  delete-files:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
