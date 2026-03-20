@@ -2,13 +2,25 @@ on:
   workflow_dispatch:
 
 jobs:
-  list-files:
+  clean-files:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
 
-      - name: List files in flight-viewer
+      - name: Delete all files except .gitkeep
         run: |
-          echo "Files in ./flight-viewer/:"
-          ls -la ./flight-viewer/
+          find ./flight-viewer -type f ! -name '.gitkeep' -delete
+
+      - name: Show remaining files
+        run: ls -la ./flight-viewer/
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add .
+          git commit -m "Cleanup flight-viewer folder" || echo "No changes to commit"
+
+      - name: Push changes
+        run: git push
