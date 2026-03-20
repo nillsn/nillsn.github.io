@@ -1,3 +1,5 @@
+name: Remove Flight Viewer App
+
 on:
   workflow_dispatch:
 
